@@ -10,6 +10,7 @@ module.exports = {
     filename: 'bundle.js', // Nombre del archivo de salida
     publicPath: '/', // Ruta relativa para los recursos
     clean: true // Limpia el directorio de salida antes de generar el bundle
+    
   },
   module: { // Configuración de los módulos, los modulos son: loaders, rules, etc.
     rules: [ // Reglas para los módulos
@@ -93,8 +94,24 @@ module.exports = {
     historyApiFallback: { // Habilita el enrutamiento de aplicaciones de una sola página
       index: '/index.html', // super importante para que funcione el enrutamiento de aplicaciones de una sola página
     }
+  },
+
+  resolve: {
+    fallback: {
+      "crypto": false,
+      "path": false,
+      "vm": false,
+      "stream": false
+    }
+
   }
+
+
+
 };
+
+
+
 
 /**
  * Diferencias entre css-loader y el plugin de MiniCssExtractPlugin
